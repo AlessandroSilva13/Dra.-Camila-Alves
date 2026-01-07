@@ -1,10 +1,11 @@
 /* ==========================================================================
-   CSS MASTER DEFINITIVO - HARMONIZADO, CENTRALIZADO E SUAVE (ARREDONDADO)
+   CSS MASTER DEFINITIVO - PROJETO ODONTOLOGIA PREMIUM
    ========================================================================== */
 
-/* 1. Fontes e Variáveis */
+/* 1. IMPORTAÇÃO DE FONTES */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
 
+/* 2. VARIÁVEIS DE DESIGN (Single Source of Truth) */
 :root {
     --marrom-escuro: #4E342E; 
     --marrom-medio: #8D6E63;
@@ -12,11 +13,12 @@
     --branco-puro: #FFFFFF;
     --texto: #4A4A4A;
     --espacamento-secao: 120px; 
-    --raio-botao: 50px; /* Estilo pílula para botões */
-    --raio-caixa: 24px;  /* Arredondamento suave para fotos e cards */
+    --raio-botao: 50px;       /* Estilo Pílula */
+    --raio-caixa: 24px;       /* Suavidade em fotos e cards */
+    --transicao: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* 2. Reset e Base */
+/* 3. RESET E CONFIGURAÇÕES BASE */
 * {
     margin: 0;
     padding: 0;
@@ -25,6 +27,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -32,44 +35,51 @@ body {
     line-height: 1.8;
     color: var(--texto);
     background-color: var(--branco-puro);
-    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* 3. Estrutura de Centralização Absoluta */
+/* 4. ESTRUTURA DE CENTRALIZAÇÃO (CONTAINER) */
 .container {
     max-width: 1140px;
     margin: 0 auto;
     padding: 0 25px;
     width: 100%;
+    display: block;
 }
 
-/* 4. Tipografia */
+/* 5. TIPOGRAFIA ESTILIZADA */
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
     color: var(--marrom-escuro);
     font-weight: 400;
-    letter-spacing: 0.5px;
+    letter-spacing: -0.02em;
 }
 
 .nome-doutora {
     font-weight: 600;
     color: var(--marrom-escuro);
+    display: inline-block;
 }
 
-/* 5. Header e Menu */
+/* 6. HEADER E NAVEGAÇÃO */
 header {
     background: rgba(255, 255, 255, 0.98);
     padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
     backdrop-filter: blur(10px);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
     align-items: center;
 }
 
@@ -81,7 +91,7 @@ nav {
 nav ul {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 35px;
 }
 
 nav ul li a {
@@ -90,52 +100,93 @@ nav ul li a {
     font-size: 0.85rem;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s ease;
+    letter-spacing: 1.5px;
+    transition: var(--transicao);
+    position: relative;
 }
 
-nav ul li a:hover {
-    color: var(--marrom-medio);
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--marrom-medio);
+    transition: var(--transicao);
 }
 
-/* 6. Seção Hero (Centralização e Impacto) */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* 7. BOTÃO FLUTUANTE (FIXO) */
+.btn-flutuante {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background-color: #25d366;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+    z-index: 9999;
+    transition: var(--transicao);
+}
+
+.btn-flutuante:hover {
+    transform: translateY(-5px) scale(1.05);
+    background-color: var(--marrom-escuro);
+    box-shadow: 0 15px 35px rgba(78, 52, 46, 0.4);
+}
+
+/* 8. SEÇÃO HERO (IMPACTO CENTRALIZADO) */
 .hero {
     padding: 160px 0;
     background: linear-gradient(135deg, var(--bege-claro) 0%, #ffffff 100%);
     text-align: center;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .hero-content {
     max-width: 850px;
+    margin: 0 auto;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    line-height: 1.2;
+    font-size: 3.8rem;
+    line-height: 1.1;
     margin-bottom: 25px;
 }
 
 .hero p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--marrom-medio);
-    margin-bottom: 40px;
+    margin-bottom: 45px;
+    font-weight: 300;
 }
 
-/* 7. Botões Arredondados Premium */
+/* 9. BOTÕES DE AÇÃO (PÍLULA) */
 .btn-agendar, .btn-principal {
     background-color: var(--marrom-escuro);
     color: var(--branco-puro);
-    padding: 16px 35px;
+    padding: 18px 40px;
     border-radius: var(--raio-botao);
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
     display: inline-block;
-    transition: all 0.4s ease;
+    transition: var(--transicao);
     border: 2px solid var(--marrom-escuro);
     cursor: pointer;
 }
@@ -144,10 +195,10 @@ nav ul li a:hover {
     background-color: transparent;
     color: var(--marrom-escuro);
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(78, 52, 46, 0.12);
+    box-shadow: 0 10px 25px rgba(78, 52, 46, 0.15);
 }
 
-/* 8. Seção Sobre (Equilíbrio Visual) */
+/* 10. SEÇÃO SOBRE (SIMETRIA LADO A LADO) */
 .interativa {
     padding: var(--espacamento-secao) 0;
 }
@@ -161,18 +212,25 @@ nav ul li a:hover {
 
 .foto-dentista, .conteudo-sobre {
     flex: 1;
+    width: 100%;
 }
 
 .foto-dentista img {
     width: 100%;
-    max-width: 420px;
+    max-width: 450px;
+    height: auto;
     border-radius: var(--raio-caixa);
-    box-shadow: 20px 20px 0px var(--bege-claro);
+    box-shadow: 30px 30px 0px var(--bege-claro);
     display: block;
     margin: 0 auto;
+    transition: var(--transicao);
 }
 
-/* 9. Abas Interativas Arredondadas */
+.foto-dentista img:hover {
+    transform: scale(1.02);
+}
+
+/* 11. ABAS INTERATIVAS (VIDA ACADÊMICA / PRINCÍPIOS) */
 .botoes-interativos {
     display: flex;
     gap: 15px;
@@ -183,37 +241,40 @@ nav ul li a:hover {
     flex: 1;
     background: transparent;
     border: 1px solid var(--marrom-medio);
-    padding: 12px 20px;
+    padding: 14px 25px;
     font-family: 'Montserrat', sans-serif;
     color: var(--marrom-medio);
     cursor: pointer;
     font-size: 0.8rem;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 1px;
     border-radius: var(--raio-botao);
-    transition: 0.3s ease;
+    transition: var(--transicao);
 }
 
 .active-btn {
     background: var(--marrom-medio) !important;
     color: white !important;
+    box-shadow: 0 5px 15px rgba(141, 110, 99, 0.3);
 }
 
 .caixa-texto {
     background: var(--bege-claro);
-    padding: 45px;
+    padding: 50px;
     border-radius: var(--raio-caixa);
-    min-height: 280px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transition: var(--transicao);
 }
 
 .tab-content {
-    animation: fadeIn 0.8s ease;
+    animation: fadeIn 0.8s ease-out;
 }
 
-/* 10. Especialidades (Grade de 3 Colunas) */
+/* 12. ESPECIALIDADES (GRID DE 3 COLUNAS) */
 #especialidades {
     padding: var(--espacamento-secao) 0;
     background-color: #FAFAFA;
@@ -223,51 +284,94 @@ nav ul li a:hover {
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 35px;
     margin-top: 60px;
 }
 
 .card {
     background: white;
-    padding: 50px 30px;
+    padding: 60px 35px;
     border-radius: var(--raio-caixa);
     border: 1px solid rgba(141, 110, 99, 0.08);
-    transition: 0.4s ease;
+    transition: var(--transicao);
+    height: 100%;
 }
 
 .card:hover {
     border-color: var(--marrom-medio);
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
 }
 
 .card i {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: var(--marrom-medio);
     margin-bottom: 25px;
 }
 
-/* 11. Mapa e Rodapé Curvado */
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* 13. ENDEREÇO E MAPA */
 #endereco {
     padding: var(--espacamento-secao) 0;
 }
 
+.mapa-container {
+    margin-top: 50px;
+    width: 100%;
+    height: 400px;
+    background: var(--bege-claro);
+    border-radius: var(--raio-caixa);
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* 14. FOOTER CURVADO E SOCIAL */
 footer {
     background: var(--marrom-escuro);
     color: var(--bege-claro);
     padding: 80px 0;
     text-align: center;
-    border-top-left-radius: 40px; 
-    border-top-right-radius: 40px;
+    border-top-left-radius: 60px; 
+    border-top-right-radius: 60px;
 }
 
-/* 12. Animações */
+footer p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.redes-sociais {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.redes-sociais a {
+    color: white;
+    font-size: 1.6rem;
+    transition: var(--transicao);
+}
+
+.redes-sociais a:hover {
+    color: var(--marrom-medio);
+    transform: scale(1.3) rotate(5deg);
+}
+
+/* 15. ANIMAÇÕES */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
+    from { opacity: 0; transform: translateY(15px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* 13. Responsividade (Otimizado para Instagram Bio) */
+/* 16. RESPONSIVIDADE (MOBILE / INSTAGRAM BIO) */
 @media (max-width: 992px) {
     .sobre-wrapper {
         flex-direction: column;
@@ -275,12 +379,12 @@ footer {
         gap: 50px;
     }
 
-    .cards-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    .hero h1 {
+        font-size: 3rem;
     }
 
-    .hero h1 {
-        font-size: 2.8rem;
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -289,20 +393,35 @@ footer {
         --espacamento-secao: 80px;
     }
 
-    nav ul, .btn-agendar {
-        display: none; /* Mantém o foco no conteúdo na Bio */
+    /* Otimização para link da Bio: Simplifica navegação */
+    nav ul, .btn-agendar, .btn-flutuante span {
+        display: none;
+    }
+
+    .btn-flutuante {
+        width: 65px;
+        height: 65px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 50%;
+        bottom: 20px;
+        right: 20px;
     }
 
     nav {
         justify-content: center;
     }
 
-    .hero {
-        padding: 100px 0;
+    .hero h1 {
+        font-size: 2.4rem;
     }
 
-    .hero h1 {
-        font-size: 2.2rem;
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
     }
 
     .botoes-interativos {
@@ -311,5 +430,10 @@ footer {
 
     .foto-dentista img {
         box-shadow: 15px 15px 0px var(--bege-claro);
+    }
+
+    .caixa-texto {
+        padding: 30px;
+        min-height: auto;
     }
 }
