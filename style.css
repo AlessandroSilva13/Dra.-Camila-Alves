@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CSS DEFINITIVO - HARMONIZADO, CENTRALIZADO E RESPONSIVO
+   CSS MASTER DEFINITIVO - HARMONIZADO, CENTRALIZADO E SUAVE (ARREDONDADO)
    ========================================================================== */
 
 /* 1. Fontes e Variáveis */
@@ -12,6 +12,8 @@
     --branco-puro: #FFFFFF;
     --texto: #4A4A4A;
     --espacamento-secao: 120px; 
+    --raio-botao: 50px; /* Estilo pílula para botões */
+    --raio-caixa: 24px;  /* Arredondamento suave para fotos e cards */
 }
 
 /* 2. Reset e Base */
@@ -33,7 +35,7 @@ body {
     overflow-x: hidden;
 }
 
-/* 3. Estrutura de Centralização */
+/* 3. Estrutura de Centralização Absoluta */
 .container {
     max-width: 1140px;
     margin: 0 auto;
@@ -47,6 +49,11 @@ h1, h2, h3 {
     color: var(--marrom-escuro);
     font-weight: 400;
     letter-spacing: 0.5px;
+}
+
+.nome-doutora {
+    font-weight: 600;
+    color: var(--marrom-escuro);
 }
 
 /* 5. Header e Menu */
@@ -91,7 +98,7 @@ nav ul li a:hover {
     color: var(--marrom-medio);
 }
 
-/* 6. Seção Hero (Impacto Inicial) */
+/* 6. Seção Hero (Centralização e Impacto) */
 .hero {
     padding: 160px 0;
     background: linear-gradient(135deg, var(--bege-claro) 0%, #ffffff 100%);
@@ -116,12 +123,12 @@ nav ul li a:hover {
     margin-bottom: 40px;
 }
 
-/* 7. Botões Premium */
+/* 7. Botões Arredondados Premium */
 .btn-agendar, .btn-principal {
     background-color: var(--marrom-escuro);
     color: var(--branco-puro);
     padding: 16px 35px;
-    border-radius: 2px;
+    border-radius: var(--raio-botao);
     text-decoration: none;
     font-size: 0.8rem;
     font-weight: 600;
@@ -129,17 +136,18 @@ nav ul li a:hover {
     text-transform: uppercase;
     display: inline-block;
     transition: all 0.4s ease;
-    border: none;
+    border: 2px solid var(--marrom-escuro);
     cursor: pointer;
 }
 
 .btn-agendar:hover, .btn-principal:hover {
-    background-color: var(--marrom-medio);
+    background-color: transparent;
+    color: var(--marrom-escuro);
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(78, 52, 46, 0.15);
+    box-shadow: 0 10px 25px rgba(78, 52, 46, 0.12);
 }
 
-/* 8. Seção Sobre (Alinhamento Lado a Lado) */
+/* 8. Seção Sobre (Equilíbrio Visual) */
 .interativa {
     padding: var(--espacamento-secao) 0;
 }
@@ -147,6 +155,7 @@ nav ul li a:hover {
 .sobre-wrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 80px;
 }
 
@@ -157,13 +166,13 @@ nav ul li a:hover {
 .foto-dentista img {
     width: 100%;
     max-width: 420px;
-    border-radius: 4px;
-    box-shadow: 25px 25px 0px var(--bege-claro);
+    border-radius: var(--raio-caixa);
+    box-shadow: 20px 20px 0px var(--bege-claro);
     display: block;
     margin: 0 auto;
 }
 
-/* 9. Abas Interativas */
+/* 9. Abas Interativas Arredondadas */
 .botoes-interativos {
     display: flex;
     gap: 15px;
@@ -181,8 +190,8 @@ nav ul li a:hover {
     font-size: 0.8rem;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s;
+    border-radius: var(--raio-botao);
+    transition: 0.3s ease;
 }
 
 .active-btn {
@@ -193,7 +202,7 @@ nav ul li a:hover {
 .caixa-texto {
     background: var(--bege-claro);
     padding: 45px;
-    border-radius: 4px;
+    border-radius: var(--raio-caixa);
     min-height: 280px;
     display: flex;
     flex-direction: column;
@@ -204,7 +213,7 @@ nav ul li a:hover {
     animation: fadeIn 0.8s ease;
 }
 
-/* 10. Especialidades (Grid Centralizado) */
+/* 10. Especialidades (Grade de 3 Colunas) */
 #especialidades {
     padding: var(--espacamento-secao) 0;
     background-color: #FAFAFA;
@@ -221,6 +230,7 @@ nav ul li a:hover {
 .card {
     background: white;
     padding: 50px 30px;
+    border-radius: var(--raio-caixa);
     border: 1px solid rgba(141, 110, 99, 0.08);
     transition: 0.4s ease;
 }
@@ -237,42 +247,27 @@ nav ul li a:hover {
     margin-bottom: 25px;
 }
 
-/* 11. Mapa e Endereço */
+/* 11. Mapa e Rodapé Curvado */
 #endereco {
     padding: var(--espacamento-secao) 0;
 }
 
-.mapa-container {
-    margin-top: 40px;
-    overflow: hidden;
-    transition: 0.3s;
-}
-
-/* 12. Footer */
 footer {
     background: var(--marrom-escuro);
     color: var(--bege-claro);
     padding: 80px 0;
     text-align: center;
+    border-top-left-radius: 40px; 
+    border-top-right-radius: 40px;
 }
 
-.redes-sociais a {
-    transition: 0.3s;
-    display: inline-block;
-}
-
-.redes-sociais a:hover {
-    transform: scale(1.2);
-    color: var(--marrom-medio);
-}
-
-/* 13. Animações */
+/* 12. Animações */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* 14. Responsividade (Instagram e Mobile) */
+/* 13. Responsividade (Otimizado para Instagram Bio) */
 @media (max-width: 992px) {
     .sobre-wrapper {
         flex-direction: column;
@@ -295,7 +290,7 @@ footer {
     }
 
     nav ul, .btn-agendar {
-        display: none; /* Simplificação extrema para Bio do Instagram */
+        display: none; /* Mantém o foco no conteúdo na Bio */
     }
 
     nav {
@@ -312,5 +307,9 @@ footer {
 
     .botoes-interativos {
         flex-direction: column;
+    }
+
+    .foto-dentista img {
+        box-shadow: 15px 15px 0px var(--bege-claro);
     }
 }
