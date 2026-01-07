@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Camila Alves | Sorriso e Cuidado</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="./Imagens/logo.jpeg" alt="Logo Dra. Camila Alves">
+            </div>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#especialidades">Especialidades</a></li>
+                <li><a href="#endereco">Onde Estamos</a></li>
+            </ul>
+            <a href="https://wa.me/88993251260" class="btn-agendar">Agendar Consulta</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Cuidando do seu sorriso com excelência e suavidade.</h1>
+            <p>Odontologia humanizada focada no seu bem-estar e autoestima.</p>
+            <br>
+            <a href="#especialidades" class="btn-principal">Conheça meu trabalho</a>
+        </div>
+    </section>
+
+    <section id="sobre" class="interativa">
+        <div class="container sobre-wrapper">
+            
+            <div class="foto-dentista">
+                <img src="./Imagens/camila.jpeg" alt="Dra. Camila Alves">
+            </div>
+
+            <div class="conteudo-sobre">
+                <h2>Conheça a Doutora</h2>
+                <p>Priorizamos um atendimento que une técnica avançada e um olhar sensível para cada paciente.</p>
+                
+                <div class="botoes-interativos">
+                    <button id="btn-formacao" class="active-btn" onclick="mostrarConteudo('formacao', this)">Vida Acadêmica</button>
+                    <button id="btn-principios" onclick="mostrarConteudo('principios', this)">Meus Princípios</button>
+                </div>
+
+                <div id="conteudo-dinamico" class="caixa-texto">
+                    <div id="formacao" class="tab-content">
+                        <h3>Formação Acadêmica</h3>
+                        <p>Graduada pela Universidade Federal, com especialização em Reabilitação Oral e Estética. Possui diversos cursos de imersão em tecnologias digitais odontológicas.</p>
+                    </div>
+                    
+                    <div id="principios" class="tab-content" style="display:none;">
+                        <h3>Nossos Princípios</h3>
+                        <p>Acreditamos na ética, no acolhimento e na transparência. Nosso objetivo é que você se sinta seguro e confortável durante cada etapa do seu tratamento.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="especialidades">
+        <div class="container">
+            <h2>Nossas Especialidades</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <i class="fas fa-tooth"></i>
+                    <h3>Clínica Geral</h3>
+                    <p>Cuidado preventivo para manter sua saúde bucal sempre em dia.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-magic"></i>
+                    <h3>Estética Dental</h3>
+                    <p>Transformações sutis com clareamentos e facetas de resina.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-align-center"></i>
+                    <h3>Ortodontia</h3>
+                    <p>Aparelhos modernos e alinhadores invisíveis para o seu conforto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="endereco">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h2>Onde Estamos</h2>
+                <p>Rua Exemplo, 123 - Sala 45 | Edifício Professional Center</p>
+                <p>Bairro Nobre, Sua Cidade - Estado</p>
+            </div>
+            
+            <div class="mapa-container" style="background: #eee; height: 300px; display: flex; align-items: center; justify-content: center; border-radius: 15px;">
+                <p style="color: #888;">[Google Maps será carregado aqui]</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Dra. Nome da Dentista. Todos os direitos reservados.</p>
+            <div class="redes-sociais" style="margin-top: 15px;">
+                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function mostrarConteudo(id, btn) {
+            // Esconde todos os conteúdos das abas
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.style.display = 'none');
+
+            // Remove a classe ativa de todos os botões
+            const buttons = document.querySelectorAll('.botoes-interativos button');
+            buttons.forEach(button => button.classList.remove('active-btn'));
+
+            // Mostra o conteúdo selecionado e ativa o botão correto
+            document.getElementById(id).style.display = 'block';
+            btn.classList.add('active-btn');
+        }
+    </script>
+
+</body>
+</html>
