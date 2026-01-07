@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <a href="https://wa.me/5500000000000" class="btn-flutuante" target="_blank">
+    <a href="https://wa.me/+5588993251260" class="btn-flutuante" target="_blank">
         <i class="fab fa-whatsapp"></i>
         <span>Agendar Consulta</span>
     </a>
@@ -21,7 +21,7 @@
     <header>
         <nav class="container">
             <div class="logo">
-                <img src="assets/logo.png" alt="Logo">
+                <img src="./Imagens/logo.jpeg" alt="Logo">
                 <span class="nome-doutora"></span>
             </div>
             
@@ -31,84 +31,95 @@
                     <li><a href="#especialidades">Especialidades</a></li>
                     <li><a href="#endereco">Localização</a></li>
                 </ul>
-                <a href="https://wa.me/5500000000000" target="_blank" class="btn-agendar">Conversar Agora</a>
+                <a href="https://wa.me/+55(88)993251260" target="_blank" class="btn-agendar">Conversar</a>
             </div>
         </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero secao-bege">
         <div class="container hero-content" data-aos="fade-up">
-            <h1>Cuidando do seu sorriso com excelência e suavidade.</h1>
-            <p>Odontologia humanizada com a <span class="nome-doutora"></span>, focada no seu bem-estar e autoestima.</p>
+            <h1>Cuidando do seu sorriso com <em>excelência</em> e suavidade.</h1>
+            <p>Odontologia humanizada e de alto padrão com a <span class="nome-doutora"></span>.</p>
             <br><br>
-            <a href="#especialidades" class="btn-principal">Conheça as Especialidades</a>
+            <a href="#especialidades" class="btn-principal">Ver Tratamentos</a>
         </div>
     </section>
 
-    <section id="sobre" class="interativa">
+    <section id="sobre" class="interativa secao-destaque">
         <div class="container sobre-wrapper">
             
-            <div class="foto-dentista" data-aos="fade-right">
-                <img src="assets/dentista.jpg" alt="Dra. Nome">
-            </div>
-
-            <div class="conteudo-sobre" data-aos="fade-left">
-                <h2>Conheça a <span class="nome-doutora"></span></h2>
-                <p>Priorizamos um atendimento que une técnica de ponta e um olhar sensível para a necessidade de cada paciente.</p>
+            <div class="conteudo-sobre" data-aos="fade-right">
+                <h2>Uma experiência <br><em>única</em> de cuidado.</h2>
+                <p class="descricao-destaque">
+                    Referência em odontologia focada no conforto. Transformamos sua visita ao dentista em um momento de renovação e autoestima.
+                </p>
                 
                 <div class="botoes-interativos">
                     <button class="active-btn" onclick="mostrarConteudo('formacao', this)">Vida Acadêmica</button>
                     <button onclick="mostrarConteudo('principios', this)">Meus Princípios</button>
                 </div>
 
-                <div id="conteudo-dinamico" class="caixa-texto">
+                <div id="conteudo-dinamico" class="caixa-texto-transparente">
                     <div id="formacao" class="tab-content">
-                        <h3>Formação Acadêmica</h3>
-                        <p>Especialista em Reabilitação Oral e Estética Avançada. A <span class="nome-doutora"></span> possui formação internacional e dedica-se a transformar sorrisos com tecnologias de mínima intervenção.</p>
+                        <h3>Formação de Excelência</h3>
+                        <p>Especialista em Reabilitação Oral e Estética Avançada. A <span class="nome-doutora"></span> possui formação internacional e dedica-se a transformar sorrisos com técnicas minimamente invasivas.</p>
                     </div>
                     
                     <div id="principios" class="tab-content" style="display:none;">
-                        <h3>Nossos Princípios</h3>
-                        <p>Ética, transparência e acolhimento. Acreditamos que a saúde bucal começa com o conforto e a segurança do paciente em cada etapa do tratamento.</p>
+                        <h3>Nossos Valores</h3>
+                        <p>Ética, transparência e acolhimento absoluto. Acreditamos que a saúde bucal começa com a segurança e o conforto do paciente.</p>
                     </div>
                 </div>
+
+                <div class="stats-box">
+                    <strong>+1k</strong>
+                    <span>Sorrisos transformados <br> com carinho.</span>
+                </div>
             </div>
+
+            <div class="foto-dentista-recortada" data-aos="fade-left">
+                <img src="./Imagens/camila jaleco sem bg.png" alt="Dra. Camila">
+            </div>
+
         </div>
     </section>
 
-    <section id="especialidades">
+    <section id="especialidades" class="secao-bege">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 60px;" data-aos="fade-up">Especialidades</h2>
+            <h2 style="text-align: center; margin-bottom: 60px;" data-aos="fade-up">Nossas Especialidades</h2>
+            
             <div class="cards-grid">
-                <div class="card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
                     <i class="fas fa-tooth"></i>
                     <h3>Clínica Geral</h3>
-                    <p>Prevenção e manutenção da saúde bucal para pacientes de todas as idades.</p>
+                    <p>Prevenção e manutenção da saúde bucal para toda a família.</p>
                 </div>
-                <div class="card" data-aos="zoom-in" data-aos-delay="200">
+
+                <div class="card card-destaque-bento" data-aos="fade-up" data-aos-delay="200">
+                    <div class="badge-destaque">Recomendado</div>
                     <i class="fas fa-magic"></i>
                     <h3>Estética Dental</h3>
-                    <p>Lentes de contato e clareamento conduzidos com o olhar artístico da <span class="nome-doutora"></span>.</p>
+                    <p>Lentes de contato e harmonização do sorriso com naturalidade absoluta.</p>
                 </div>
-                <div class="card" data-aos="zoom-in" data-aos-delay="300">
+
+                <div class="card" data-aos="fade-up" data-aos-delay="300">
                     <i class="fas fa-align-center"></i>
                     <h3>Ortodontia</h3>
-                    <p>Alinhadores invisíveis e aparelhos modernos para correções discretas e rápidas.</p>
+                    <p>Alinhadores invisíveis e aparelhos modernos para correção discreta.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="endereco">
+    <section id="endereco" class="secao-branca">
         <div class="container" data-aos="fade-up">
             <div style="text-align: center; margin-bottom: 40px;">
-                <h2>Onde Estamos</h2>
-                <p>Consultório <span class="nome-doutora"></span></p>
+                <h2>Localização</h2>
                 <p>Edifício Empresarial Premium | Sala 1002</p>
                 <p>Avenida Principal, 123 - Centro, Sua Cidade</p>
             </div>
             <div class="mapa-container">
-                <p style="color: #8d6e63; font-style: italic;">[Mapa do Google Maps será integrado aqui]</p>
+                <p style="color: #8C7B75; font-style: italic;">[Mapa do Google Maps será carregado aqui]</p>
             </div>
         </div>
     </section>
@@ -117,27 +128,36 @@
         <div class="container">
             <p>&copy; 2026 <span class="nome-doutora"></span>. Todos os direitos reservados.</p>
             <div class="redes-sociais">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/alexm.s2/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/alexm.s2/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/+55(88)993251260" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // --- Configuração do Nome ---
         const nomeDaDra = "Dra. Camila Alves";
 
         function setNomeDra() {
             document.querySelectorAll('.nome-doutora').forEach(el => el.textContent = nomeDaDra);
             document.title = nomeDaDra + " | Odontologia Premium";
+            
+            // Atualiza ALT das imagens para acessibilidade
+            document.querySelectorAll('img').forEach(img => {
+                if(img.alt.includes("Dra") || img.alt === "Logo") {} 
+                else { img.alt = "Foto referente a " + nomeDaDra; }
+            });
         }
 
+        // --- Inicialização ---
         window.addEventListener('DOMContentLoaded', () => {
             setNomeDra();
-            AOS.init({ duration: 1000, once: true, easing: 'ease-out' });
+            AOS.init({ duration: 900, once: true, easing: 'ease-out-cubic' });
         });
 
+        // --- Lógica das Abas ---
         function mostrarConteudo(id, btn) {
             document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
             document.querySelectorAll('.botoes-interativos button').forEach(b => b.classList.remove('active-btn'));
